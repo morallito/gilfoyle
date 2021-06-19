@@ -48,3 +48,18 @@ Pull requests with no previous acknowledge will not be accepted.
 [AWS Cli](https://github.com/aws/aws-cli)
 [Terraform up and running](https://www.oreilly.com/library/view/terraform-up/9781492046899/)
 [Terraform provider aws](https://github.com/hashicorp/terraform-provider-aws)
+
+
+## Repository structure
+
+```
+gilfoyle
+│   README.md
+│   LICENSE.md    
+│
+└───architecture
+    │   architecture.txt
+    │   architecture_overview.png
+    |   ARCHITECTURE.md 
+
+```
