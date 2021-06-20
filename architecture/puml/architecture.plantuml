@@ -13,7 +13,7 @@ package "CLI" {
 
 
 terminal --> command_parser : string
-
+command_parser --> messenger : status_code
 command_parser -->  cloud_provider_code_generator_aws : tuple
 
 command_parser -->  cloud_provider_code_generator_azure : tuple
