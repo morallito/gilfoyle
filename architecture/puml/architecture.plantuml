@@ -1,0 +1,31 @@
+@startuml
+!pragma useVerticalIf on
+cloud terminal
+file error_output
+package "CLI" {
+  [command_parser]
+  [cloud_provider_code_generator_aws]
+  [cloud_provider_code_generator_azure]
+  [cloud_provider_code_generator_gcp]
+  [messenger]
+  [error_log_generator]
+}
+
+
+terminal --> command_parser : string
+command_parser --> messenger : status_code
+command_parser -->  cloud_provider_code_generator_aws : tuple
+
+command_parser -->  cloud_provider_code_generator_azure : tuple
+
+command_parser -->  cloud_provider_code_generator_gcp : tuple
+
+cloud_provider_code_generator_aws --> messenger : status_code
+cloud_provider_code_generator_azure --> messenger : status_code
+cloud_provider_code_generator_gcp --> messenger : status_code
+
+messenger --> terminal : creation_status_log
+messenger --> error_log_generator
+error_log_generator --> error_output : log
+
+@enduml
