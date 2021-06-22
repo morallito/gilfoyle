@@ -34,3 +34,6 @@ pip-freeze:
 test: 
 	@ cd src && python -m pytest tests && cd ..
 
+format: 
+	@python -m black src/
+

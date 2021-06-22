@@ -5,5 +5,4 @@ from messenger import *
 from logstrings import *
 
 
-
-console_log_string ("LALA")
+console_log_string("LALA")
